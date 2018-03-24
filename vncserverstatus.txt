@@ -1,0 +1,54 @@
+VNC Server
+-----------------------------------------------
+Home subscription
+VNC® Server 6.2.1 (r32538) x64 (Dec 1 2017 12:56:18)
+Mode: service
+Users connected: 0
+Encryption: AlwaysOn
+Authentication: VncAuth
+Connection attempts: 0
+Successful connections: 0
+Identity: "Figure mixer lecture. Sabine alcohol mammal" (signature ce-6b-30-3d-dd-6b-74-e2)
+Capture Method: 0
+Update check succeeded on 2018-03-14T12:50:44Z
+Proxy: System
+
+RealVNC services
+-----------------------------------------------
+Server name: AMANSINGH [thakur]
+Team name: Aman's Team (Home)
+Connection: locating nearest server...
+Status: Joined and entitled
+Next status check: 2018-03-15T12:50:38.576Z
+
+System
+-----------------------------------------------
+Microsoft Windows 10 on x64
+- Machine: 80E3
+- AMD E1-6010 APU with AMD Radeon R2 Graphics    
+- Total physical memory: 3544 MB
+- Free physical memory: 1385 MB
+- Memory in use: 60%
+- System locale: 'en_IN'
+
+Display
+-----------------------------------------------
+- Displays Connected: 1
+- Display 1, Primary
+    - DisplayDevice ID: \\.\DISPLAY1
+    - Display Device: Generic PnP Monitor
+    - 32 Bits Per Pixel
+    - Resolution: 1366 x 768
+    - Origin: (0,0)
+- Display Adapters:
+    - AMD Radeon(TM) R2 Graphics
+    - AMD Radeon(TM) R2 Graphics
+
+Issues
+-----------------------------------------------
+## Warning ##
+Temporarily disconnected from RealVNC services
+
+A networking error has prevented VNC Server from contacting RealVNC services.
+
+VNC Server will reconnect to RealVNC services as soon as network connectivity is regained. If this problem persists, re-register VNC Server or contact RealVNC technical support.
