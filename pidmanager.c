@@ -29,7 +29,7 @@ int allocate_map(){
 
 int allocate_pid(){
 	int j=0;
-	while(j<MAX_PID){
+	while(j<MAX_PID-MIN_PID){
 		if (pidm[j].allocated==0){
 			pthread_mutex_lock(&mutex);
 			pidm[j].allocated=1;
@@ -43,7 +43,7 @@ int allocate_pid(){
 
 void release_pid(int pid){
 	int k=0;
-	while(k<MAX_PID){
+	while(k<MAX_PID-MIN_PID){
 		if(pidm[k].pid==pid){
 			int res=pthread_mutex_lock(&mutex);
 			pidm[k].allocated=0;
