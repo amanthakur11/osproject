@@ -14,46 +14,6 @@ struct process{
 	int pid,allocated;
 }pidm[MAX_PID-MIN_PID];
 
-int allocate_map(){
-	int i=MIN_PID;
-	while(i<=MAX_PID){
-			pidm[i-MIN_PID].pid=i;
-		pidm[i-MIN_PID].allocated=0;
-		i++;
-	}
-	if(i==MAX_PID+1){
-	return 1;
-    }
-    return -1;
-}
-
-int allocate_pid(){
-	int j=0;
-	while(j<MAX_PID-MIN_PID){
-		if (pidm[j].allocated==0){
-			pthread_mutex_lock(&mutex);
-			pidm[j].allocated=1;
-			pthread_mutex_unlock(&mutex);
-			return pidm[j].pid;
-		}
-		j++;
-	}
-	return -1;
-}
-
-void release_pid(int pid){
-	int k=0;
-	while(k<MAX_PID-MIN_PID){
-		if(pidm[k].pid==pid){
-			int res=pthread_mutex_lock(&mutex);
-			pidm[k].allocated=0;
-			res=pthread_mutex_unlock(&mutex);
-			break;
-		}
-		k++;
-	}
-}
-
 void* processfunc(void *a) {
 	int pid=allocate_pid();
 	printf("New process created : %d\n",pid);
