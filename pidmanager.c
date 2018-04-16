@@ -22,6 +22,19 @@ void* processfunc(void *a) {
 	release_pid(pid);
 	printf("Process destroyed : %d\n",pid);
 }
+int allocate_map(){
+	int i=MIN_PID;
+	while(i<=MAX_PID){
+			pidm[i-MIN_PID].pid=i;
+		pidm[i-MIN_PID].allocated=0;
+		i++;
+	}
+	if(i==MAX_PID+1){
+	return 1;
+    }
+    return -1;
+}
+
 
 void createprocess() {
 	int l=0;
