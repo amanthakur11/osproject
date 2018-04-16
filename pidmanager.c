@@ -49,6 +49,18 @@ int allocate_pid(){
 	return -1;
 }
 
+void release_pid(int pid){
+	int k=0;
+	while(k<MAX_PID-MIN_PID){
+		if(pidm[k].pid==pid){
+			int res=pthread_mutex_lock(&mutex);
+			pidm[k].allocated=0;
+			res=pthread_mutex_unlock(&mutex);
+			break;
+		}
+		k++;
+	}
+}
 
 void createprocess() {
 	int l=0;
