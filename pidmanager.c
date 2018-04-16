@@ -35,6 +35,20 @@ int allocate_map(){
     return -1;
 }
 
+int allocate_pid(){
+	int j=0;
+	while(j<MAX_PID-MIN_PID){
+		if (pidm[j].allocated==0){
+			pthread_mutex_lock(&mutex);
+			pidm[j].allocated=1;
+			pthread_mutex_unlock(&mutex);
+			return pidm[j].pid;
+		}
+		j++;
+	}
+	return -1;
+}
+
 
 void createprocess() {
 	int l=0;
